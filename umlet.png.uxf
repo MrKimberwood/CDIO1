@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>270</x>
+      <y>10</y>
+      <w>330</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>dto::UserDTO
+--
+-serialVersionUID = 4545864587995944260L: long
+-userId: int
+-userName, cpr, password, ini: String
+-roles: List&lt;String&gt;
+-list: List&lt;String&gt;
+--
++UserDTO(): ctor
++getUserId(): int
++setUserId(int userId): void
++getUserName(): String
++setUserName(String userName): void
++getIni(): String
++setIni(String ini): void
++getRoles(): List&lt;String&gt;
++setRoles(List&lt;String&gt; roles): void
++addRole(String role): void
++removeRole(String role): boolean
++toString(): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>10</y>
+      <w>230</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>test::DBTester
+--
+--
++main(String[] args): void
+-printUsers(IUserDAO iDAO): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>10</y>
+      <w>230</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+dal::IUserDAO
+--
+--
+~getUser(int userId): UserDTO
+~getUserList(): List&lt;UserDTO&gt;
+~createUser(UserDTO user): void
+~updateUser(UserDTO user): void
+~deleteUser(int userId): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
