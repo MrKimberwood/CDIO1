@@ -19,3 +19,13 @@
       -- g. addRole       
       -- h. removeRole       
 
+
+
+         ############# ADDED #############
+~ Input Exceptions as interface in the validation package.
+~ Checks for valid/taken id/name/cpr/
+~ 
+~ 
+~ 
+~ 
+####################################################
