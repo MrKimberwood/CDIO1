@@ -1,2 +1,33 @@
 # CDIO1
-Skelet til implementering af CDIO1 - Indeholder desuden reference implementering af IUserDAO
+
+#TODO
+
+1 - Generate random pass for new users. (Jona).
+
+2 - Create TUI.
+
+3 - Create Controller/controllers.           
+       -- a. One for each use case?    
+    
+4 - Where should ArrayList DB be placed?
+
+5 - Write methods for:      
+       -- a. getUserId               
+       -- b. getUserName          
+       -- c. setUserName       
+       -- d. getIni         
+       -- e. getRoles       
+       -- f. setRoles       
+       -- g. addRole       
+       -- h. removeRole       
+
+
+#Added
+                                                      
+~ Input Exceptions as interface in the validation package.          
+~ Checks for valid/taken id/name/cpr/           
+~        
+~         
+~        
+~        
+                                   
