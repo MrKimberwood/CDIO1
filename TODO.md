@@ -10,12 +10,12 @@
 4 - Where should ArrayList DB be placed?
 
 5 - Write methods for 
-       a. getUserId               
-       b. getUserName          
-       c. setUserName       
-       d. getIni         
-       e. getRoles       
-       f. setRoles       
-       g. addRole       
-       h. removeRole       
+      -- a. getUserId               
+      -- b. getUserName          
+      -- c. setUserName       
+      -- d. getIni         
+      -- e. getRoles       
+      -- f. setRoles       
+      -- g. addRole       
+      -- h. removeRole       
 
