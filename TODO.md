@@ -4,12 +4,12 @@
 
 2 - Create TUI.
 
-3 - Create Controller/controllers.
-    a. One for each use case?
+3 - Create Controller/controllers.           
+   -- a. One for each use case?    
     
 4 - Where should ArrayList DB be placed?
 
-5 - Write methods for 
+5 - Write methods for:      
       -- a. getUserId               
       -- b. getUserName          
       -- c. setUserName       
