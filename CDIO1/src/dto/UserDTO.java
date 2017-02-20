@@ -8,17 +8,45 @@ import java.util.List;
 //Packet imports
 import validation.IException.InpExc;
 
+
 public class UserDTO implements Serializable{
 
 	private static final long serialVersionUID = 4545864587995944260L;
 	private int	userId;                     
 	private String userName, cpr, password, ini;                              
 	private List<String> roles;
+	private ArrayList<String> usrDB;
 	
 	public UserDTO() {
 		this.roles = new ArrayList<>();
+		this.usrDB = new ArrayList<>();
 	}
 	
+	//Cpr operations
+	public String getCpr() throws InpExc{
+		return cpr;
+	}
+	
+	public void setCpr(String cpr) throws InpExc{
+		checkCpr(cpr);
+		this.cpr = cpr;
+	}
+	
+	public boolean checkCpr(String cpr) throws InpExc{
+		if(!usrDB.contains(cpr)){
+			return true;
+		}
+		return false;
+	}
+	
+	//Password operations
+	public String getPassword() throws InpExc{
+		return password;
+	}
+	
+	public void setPassword(String password) throws InpExc{
+		this.password = password;
+	}
 	
 	//Id operations
 	public int getUserId() throws InpExc{
@@ -30,8 +58,10 @@ public class UserDTO implements Serializable{
 		this.userId = userId;
 	}
 	
-	public boolean checkUserId(int uderId) throws InpExc{
-		
+	public boolean checkUserId(int userId) throws InpExc{
+		if(!usrDB.contains(userId)){
+			return true;
+		}
 		return false;
 	}
 	
@@ -47,7 +77,9 @@ public class UserDTO implements Serializable{
 	}
 	
 	public boolean checkUserName(String userName) throws InpExc{
-		
+		if(!usrDB.contains(userName)){
+			return true;
+		}
 		return false;
 	}
 	
@@ -64,20 +96,22 @@ public class UserDTO implements Serializable{
 	}
 	
 	public boolean checkIni(String ini) throws InpExc{
-		
-		return true;
+		if(!usrDB.contains(ini)){
+			return true;
+		}
+		return false;
 	}
 
 	
 	//Role operations
-	public List<String> getRoles() {
+	public List<String> getRoles() throws InpExc{
 		return roles;
 	}
-	public void setRoles(List<String> roles) {
+	public void setRoles(List<String> roles) throws InpExc{
 		this.roles = roles;
 	}
 	
-	public void addRole(String role){
+	public void addRole(String role) throws InpExc{
 		this.roles.add(role);
 	}
 	/**
@@ -85,7 +119,7 @@ public class UserDTO implements Serializable{
 	 * @param role
 	 * @return true if role existed, false if not
 	 */
-	public boolean removeRole(String role){
+	public boolean removeRole(String role) throws InpExc{
 		return this.roles.remove(role);
 	}
 
