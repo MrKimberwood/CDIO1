@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 //Packet imports
-import validation.IException.InpExc;
+import dal.IUserDAO.DALException;
 
 
 public class UserDTO implements Serializable{
@@ -23,16 +23,16 @@ public class UserDTO implements Serializable{
 	}
 	
 	//Cpr operations
-	public String getCpr() throws InpExc{
+	public String getCpr() throws DALException{
 		return cpr;
 	}
 	
-	public void setCpr(String cpr) throws InpExc{
+	public void setCpr(String cpr) throws DALException{
 		checkCpr(cpr);
 		this.cpr = cpr;
 	}
 	
-	public boolean checkCpr(String cpr) throws InpExc{
+	public boolean checkCpr(String cpr) throws DALException{
 		if(!usrDB.contains(cpr)){
 			return true;
 		}
@@ -40,25 +40,25 @@ public class UserDTO implements Serializable{
 	}
 	
 	//Password operations
-	public String getPassword() throws InpExc{
+	public String getPassword() throws DALException{
 		return password;
 	}
 	
-	public void setPassword(String password) throws InpExc{
+	public void setPassword(String password) throws DALException{
 		this.password = password;
 	}
 	
 	//Id operations
-	public int getUserId() throws InpExc{
+	public int getUserId() throws DALException{
 		return userId;
 	}
 	
-	public void setUserId(int userId) throws InpExc{
+	public void setUserId(int userId) throws DALException{
 		checkUserId(userId);
 		this.userId = userId;
 	}
 	
-	public boolean checkUserId(int userId) throws InpExc{
+	public boolean checkUserId(int userId) throws DALException{
 		if(!usrDB.contains(userId)){
 			return true;
 		}
@@ -67,16 +67,16 @@ public class UserDTO implements Serializable{
 	
 	
 	//Name operations
-	public String getUserName() throws InpExc{
+	public String getUserName() throws DALException{
 		return userName;
 	}
 	
-	public void setUserName(String userName) throws InpExc{
+	public void setUserName(String userName) throws DALException{
 		checkUserName(userName);
 		this.userName = userName;
 	}
 	
-	public boolean checkUserName(String userName) throws InpExc{
+	public boolean checkUserName(String userName) throws DALException{
 		if(!usrDB.contains(userName)){
 			return true;
 		}
@@ -85,17 +85,17 @@ public class UserDTO implements Serializable{
 	
 	
 	//Ini operations
-	public String getIni() throws InpExc {
+	public String getIni() throws DALException{
 		checkIni(ini);
 		return ini;
 	}
 	
-	public void setIni(String ini) throws InpExc {
+	public void setIni(String ini) throws DALException{
 		checkIni(ini);
 		this.ini = ini;
 	}
 	
-	public boolean checkIni(String ini) throws InpExc{
+	public boolean checkIni(String ini) throws DALException{
 		if(!usrDB.contains(ini)){
 			return true;
 		}
@@ -104,14 +104,14 @@ public class UserDTO implements Serializable{
 
 	
 	//Role operations
-	public List<String> getRoles() throws InpExc{
+	public List<String> getRoles() throws DALException{
 		return roles;
 	}
-	public void setRoles(List<String> roles) throws InpExc{
+	public void setRoles(List<String> roles) throws DALException{
 		this.roles = roles;
 	}
 	
-	public void addRole(String role) throws InpExc{
+	public void addRole(String role) throws DALException{
 		this.roles.add(role);
 	}
 	/**
@@ -119,7 +119,7 @@ public class UserDTO implements Serializable{
 	 * @param role
 	 * @return true if role existed, false if not
 	 */
-	public boolean removeRole(String role) throws InpExc{
+	public boolean removeRole(String role) throws DALException{
 		return this.roles.remove(role);
 	}
 
