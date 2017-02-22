@@ -7,11 +7,11 @@ import dal.IUserDAO;
 import dal.IUserDAO.DALException;
 import dal.UserDAODiscImpl;
 import dto.UserDTO;
-import validation.IException.InpExc;
+import dal.IUserDAO.DALException;;
 
 public class DBTester {
 	//TODO refactor as JUnit test???
-	public static void main(String[] args) throws InpExc {
+	public static void main(String[] args) throws DALException{
 		IUserDAO iDAO = new UserDAODiscImpl();
 		UserDTO newUser = new UserDTO();
 		printUsers(iDAO);

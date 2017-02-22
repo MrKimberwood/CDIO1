@@ -6,7 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 //Packet imports
-import validation.IException.InpExc;
+import dal.IUserDAO.DALException;
+
 
 public class UserDTO implements Serializable{
 
@@ -14,70 +15,103 @@ public class UserDTO implements Serializable{
 	private int	userId;                     
 	private String userName, cpr, password, ini;                              
 	private List<String> roles;
+	private ArrayList<String> usrDB;
 	
 	public UserDTO() {
 		this.roles = new ArrayList<>();
+		this.usrDB = new ArrayList<>();
 	}
 	
+	//Cpr operations
+	public String getCpr() throws DALException{
+		return cpr;
+	}
+	
+	public void setCpr(String cpr) throws DALException{
+		checkCpr(cpr);
+		this.cpr = cpr;
+	}
+	
+	public boolean checkCpr(String cpr) throws DALException{
+		if(!usrDB.contains(cpr)){
+			return true;
+		}
+		return false;
+	}
+	
+	//Password operations
+	public String getPassword() throws DALException{
+		return password;
+	}
+	
+	public void setPassword(String password) throws DALException{
+		this.password = password;
+	}
 	
 	//Id operations
-	public int getUserId() throws InpExc{
+	public int getUserId() throws DALException{
 		return userId;
 	}
 	
-	public void setUserId(int userId) throws InpExc{
+	public void setUserId(int userId) throws DALException{
 		checkUserId(userId);
 		this.userId = userId;
 	}
 	
-	public boolean checkUserId(int uderId) throws InpExc{
-		
+	public boolean checkUserId(int userId) throws DALException{
+		if(!usrDB.contains(userId)){
+			return true;
+		}
 		return false;
 	}
 	
 	
 	//Name operations
-	public String getUserName() throws InpExc{
+	public String getUserName() throws DALException{
 		return userName;
 	}
 	
-	public void setUserName(String userName) throws InpExc{
+	public void setUserName(String userName) throws DALException{
 		checkUserName(userName);
 		this.userName = userName;
 	}
 	
-	public boolean checkUserName(String userName) throws InpExc{
-		
+	public boolean checkUserName(String userName) throws DALException{
+		if(!usrDB.contains(userName)){
+			return true;
+		}
 		return false;
 	}
 	
 	
 	//Ini operations
-	public String getIni() throws InpExc {
+	public String getIni() throws DALException{
 		checkIni(ini);
 		return ini;
 	}
 	
-	public void setIni(String ini) throws InpExc {
+	public void setIni(String ini) throws DALException{
 		checkIni(ini);
 		this.ini = ini;
 	}
 	
-	public boolean checkIni(String ini) throws InpExc{
-		
-		return true;
+	public boolean checkIni(String ini) throws DALException{
+		if(!usrDB.contains(ini)){
+			return true;
+		}
+		return false;
 	}
 
 	
 	//Role operations
-	public List<String> getRoles() {
+	public List<String> getRoles() throws DALException{
 		return roles;
 	}
-	public void setRoles(List<String> roles) {
+	public void setRoles(List<String> roles) throws DALException{
 		this.roles = roles;
 	}
 	
-	public void addRole(String role){
+	public void addRole(String role) throws DALException{
 		this.roles.add(role);
 	}
 	/**
@@ -85,7 +119,7 @@ public class UserDTO implements Serializable{
 	 * @param role
 	 * @return true if role existed, false if not
 	 */
-	public boolean removeRole(String role){
+	public boolean removeRole(String role) throws DALException{
 		return this.roles.remove(role);
 	}
 
