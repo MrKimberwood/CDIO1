@@ -21,12 +21,11 @@ public class UserDTO implements Serializable{
 	
 	
 	//Id operations
-	public int getUserId() throws InpExc{
+	public int getUserId(){
 		return userId;
 	}
 	
-	public void setUserId(int userId) throws InpExc{
-		checkUserId(userId);
+	public void setUserId(int userId){
 		this.userId = userId;
 	}
 	
@@ -37,12 +36,11 @@ public class UserDTO implements Serializable{
 	
 	
 	//Name operations
-	public String getUserName() throws InpExc{
+	public String getUserName(){
 		return userName;
 	}
 	
-	public void setUserName(String userName) throws InpExc{
-		checkUserName(userName);
+	public void setUserName(String userName){
 		this.userName = userName;
 	}
 	
@@ -53,13 +51,11 @@ public class UserDTO implements Serializable{
 	
 	
 	//Ini operations
-	public String getIni() throws InpExc {
-		checkIni(ini);
+	public String getIni(){
 		return ini;
 	}
 	
-	public void setIni(String ini) throws InpExc {
-		checkIni(ini);
+	public void setIni(String ini) {
 		this.ini = ini;
 	}
 	
@@ -92,7 +88,27 @@ public class UserDTO implements Serializable{
 	
 	@Override
 	public String toString() {
-		return "UserDTO [userId=" + userId + ", userName=" + userName + ", ini=" + ini + ", roles=" + roles + "]";
+		return "\nUserDTO [userId=" + userId + ", userName=" + userName + ", ini=" + ini + ", roles=" + roles.toString() + "]";
+	}
+
+
+	public String getCpr() {
+		return cpr;
+	}
+
+
+	public void setCpr(String cpr) {
+		this.cpr = cpr;
+	}
+
+
+	public String getPassword() {
+		return password;
+	}
+
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	

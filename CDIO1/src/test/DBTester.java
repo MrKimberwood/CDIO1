@@ -5,6 +5,7 @@ import java.util.List;
 
 import dal.IUserDAO;
 import dal.IUserDAO.DALException;
+import dal.NonPersistentDAO;
 import dal.UserDAODiscImpl;
 import dto.UserDTO;
 import validation.IException.InpExc;
@@ -12,7 +13,7 @@ import validation.IException.InpExc;
 public class DBTester {
 	//TODO refactor as JUnit test???
 	public static void main(String[] args) throws InpExc {
-		IUserDAO iDAO = new UserDAODiscImpl();
+		IUserDAO iDAO = new NonPersistentDAO();
 		UserDTO newUser = new UserDTO();
 		printUsers(iDAO);
 		//TODO test new fields...
